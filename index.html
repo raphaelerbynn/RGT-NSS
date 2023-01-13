@@ -1,171 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Park University</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header__container">
-        <div class="top-header">
-            <div class="text-links">
-                <span><a href="#">Students</a></span>
-                <span><a href="#">Faculty & Staff</a></span>
-                <span><a href="#">Alumni</a></span>
-                <span><a href="#">COVID-19</a></span>
-            </div>
-            <div class="btn-links">
-                <span><button>APPLY TO PARK</button></span>
-                <span><button>REQUEST INFO</button></span>
-                <span><button>PLAN A VISIT</button></span>
-                <span><button>MY PARK</button></span>
-            </div>
-        </div>
-        <div class="mid-header">
-            <div class="header__logo"></div>
-            <div class="header__toggle">
-                <span>Parkville, MO</span>
-                <span>Gilbert, AV</span>
-                <span>Campus Centers</span>
-                <span>Online</span>
-            </div>
-            <div class="header__search"></div>
-            <div>
-                <form class="header__search-form" method="get" action="#">
-                    <label class="header__label">
-                        <input class="search__input" type="search"  placeholder="WHAT ARE YOU LOOKING FOR?"/>
-                    </label>
-                </form>
-            </div>
+      <div class="top-header">
+        <div class="text-links">
+          <a href="#">Students</a>
+          <div class="staff-dropdown">
+            <a href="#"
+              >Faculty & Staff
+              <!-- <div class="arrow"></div> -->
+              <div class="dropdown-content">
+                <div class="links-card">
+                  <a href="#">Park University Email</a>
+                  <a href="#">Information Technology Services</a>
+                  <a href="#">Faculty Center for Innovation</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="alumni-dropdown">
+            <a href="#"
+              >Alumni
+              <div class="dropdown-content">
+                <div class="links-card">
+                  <a href="#">Alumni Association</a>
+                  <a href="#">Career Development</a>
+                  <a href="#">Home Coming Weekend</a>
+                  <a href="#">Park Magazine</a>
+                  <a href="#">Park Spirit Store</a>
+                  <a href="#">Ways To Give To Park</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <a href="#">COVID-19</a>
         </div>
 
-        <div class="bottom-header">
-            <span><a href="#">ABOUT PARK</a></span>
-            <span><a href="#">ACADEMICS</a></span>
-            <span><a href="#">ADMISSION</a></span>
-            <span><a href="#">TUITION & AID</a></span>
+        <div class="btn-links">
+          <button>APPLY TO PARK</button>
+          <button>REQUEST INFO</button>
+          <button>PLAN A VISIT</button>
+          <button>MY PARK</button>
         </div>
+      </div>
+      <div class="mid-header">
+        <div class="mid-left">
+          <div class="header__logo">
+            <img src="#" alt="logo" />
+          </div>
+          <div class="header__toggle">
+            <span><a href="#">Parkville, MO</a></span>
+            <span><a href="#">Gilbert, AV</a></span>
+            <span><a href="#">Campus Centers</a></span>
+            <span><a href="#">Online</a></span>
+          </div>
+        </div>
+        <div class="header__search"></div>
+        <div>
+          <form class="header__search-form" method="get" action="#">
+            <label class="header__label">
+              <input
+                class="search__input"
+                type="search"
+                placeholder="WHAT ARE YOU LOOKING FOR?"
+              />
+            </label>
+          </form>
+        </div>
+      </div>
+      <div class="bottom-header">
+        <span
+          ><a href="#">ABOUT PARK</a>
+          <div class="dropdown-content">
+            <ul class="links-card">
+              <a href="#">Alumni Association</a>
+              <li><a href="#">Park at a glance</a></li>
+              <li><a href="#">Park brand and logos</a></li>
+              <li><a href="#">Mission and vision</a></li>
+              <li><a href="#">Vision 2025</a></li>
+              <li><a href="#">Campus leadership</a></li>
+              <li><a href="#">Strategic alliance</a></li>
+              <li><a href="#">Visual Tour</a></li>
+            </ul>
+          </div>
+        </span>
+        <!-- 
+          Explore Majors & Programs
+College of Liberal Arts and Sciences
+College of Education and Health Professions
+College of Management
+Online Education and Learning
+Professional Education & Workforce Development
+Academic Catalogs
+Office of Institutional Research and Assessment
+         -->
+        <span
+          ><a href="#">ACADEMICS</a>
+          <div class="dropdown-content">
+            <ul class="links-card">
+              <a href="#">Explore Majors & Programs</a>
+              <li><a href="#">College of Liberal Arts and Sciences</a></li>
+              <li>
+                <a href="#">College of Education and Health Professions</a>
+              </li>
+              <li><a href="#">College of Management</a></li>
+              <li><a href="#">Online Education and Learning</a></li>
+              <li>
+                <a href="#">Professional Education & Workforce Development</a>
+              </li>
+              <li><a href="#">Academic Catalogs</a></li>
+              <li>
+                <a href="#">Office of Institutional Research and Assessment</a>
+              </li>
+            </ul>
+          </div>
+        </span>
+        <span
+          ><a href="#">ADMISSION</a>
+          <div class="dropdown-content">
+            <ul class="links-card">
+              <li><a href="#">Campus Center Admissions</a></li>
+              <li><a href="#">Online Admissions</a></li>
+              <li><a href="#">Military and Veteran Admissions</a></li>
+              <li>
+                <a href="#">International Admission and Student Success</a>
+              </li>
+              <li><a href="#">Transfer Admissions</a></li>
+              <li><a href="#">Working Professionals Admissions</a></li>
+              <li><a href="#">Refer a Friend Program</a></li>
+            </ul>
+          </div>
+        </span>
+        <!-- Tuition Rates
+Financial Aid
+
+         -->
+        <span
+          ><a href="#">TUITION & AID</a>
+          <div class="dropdown-content show-left">
+            <ul class="links-card">
+              <li><a href="#">Tuition Rates</a></li>
+              <li><a href="#">Financial Aid</a></li>
+              <li><a href="#">Scholarships</a></li>
+            </ul>
+          </div>
+        </span>
+        <span
+          ><a href="#">LIFE @ PARK</a>
+          <div class="dropdown-content show-left">
+            <ul class="links-card">
+              <li><a href="#">Campus Center Admissions</a></li>
+              <li><a href="#">Online Admissions</a></li>
+              <li><a href="#">Military and Veteran Admissions</a></li>
+              <li>
+                <a href="#">International Admission and Student Success</a>
+              </li>
+              <li><a href="#">Transfer Admissions</a></li>
+              <li><a href="#">Working Professionals Admissions</a></li>
+              <li><a href="#">Refer a Friend Program</a></li>
+            </ul>
+          </div>
+        </span>
+        <span
+          ><a href="#">ATHLETICS</a>
+          <div class="dropdown-content show-left">
+            <ul class="links-card">
+              <li><a href="#">Campus Center Admissions</a></li>
+              <li><a href="#">Online Admissions</a></li>
+              <li><a href="#">Military and Veteran Admissions</a></li>
+              <li>
+                <a href="#">International Admission and Student Success</a>
+              </li>
+              <li><a href="#">Transfer Admissions</a></li>
+              <li><a href="#">Working Professionals Admissions</a></li>
+              <li><a href="#">Refer a Friend Program</a></li>
+            </ul>
+          </div>
+        </span>
+      </div>
     </header>
 
     <div class="content__container">
-        <div class="content__header">
-            <img class="header__image" src="#" alt="Header image" />
-            <p>Transforming lives since 2020</p>
-        </div>
-        <div class="content__header__buttons">
-            <span><button>APPLY</button></span>
-            <span><button>REQUEST INFO</button></span>
-            <span><button>PLAN A VISIT</button></span>
-        </div>
+      <div class="content__header">
+        <video
+          class="header__video"
+          autoplay
+          loop
+          style="display: block; max-width: 0 auto"
+        >
+          <source src="./banner-2022.mp4" type="video/mp4" />
+        </video>
+        <p>Transforming lives since 2020</p>
+      </div>
+      <div class="content__header__buttons">
+        <span><button>APPLY</button></span>
+        <span><button>REQUEST INFO</button></span>
+        <span><button>PLAN A VISIT</button></span>
+      </div>
 
-        <div class="container__redefined">
-            <div class="topic">
-                <p>Redefine Possible</p>
-            </div>
-            <div class="c-1 redefined-content">
-                <p>Enroll Now for Spring II Term</p>
-                <p>Park University is enrolling now for Spring II Term. Classes start March 13, 2023.</p>
-                <a href="#">ENROLL TODAY!</a>
-            </div>
-            <img class="" src="#" alt="image" />
-
-            <div class="c-2 redefined-content">
-                <p>President Smeed’s podcast on ‘Militarily Speaking’</p>
-                <p>PListen to Shane Smeed, President, Park University, as he speaks on supporting military families.</p>
-                <a href="#">Listen Now: Militarily Speaking, Episode 11</a>
-            </div>
-            <img class="" src="#" alt="image" />
-
-            <div class="c-3 redefined-content">
-                <p>Park University Named ‘Military Friendly Top 10 School’</p>
-                <p>
-                    Park University has been named a Military Friendly Top 10 School for 2022-23 by Viqtory.
-                </p>
-                <a href="#">Read more</a>
-            </div>
-            <img class="" src="#" alt="image" />
+      <div class="container__redefined">
+        <div class="topic">
+          <p>Redefine Possible</p>
         </div>
+        <div class="c-1 redefined-content">
+          <p>Enroll Now for Spring II Term</p>
+          <p>
+            Park University is enrolling now for Spring II Term. Classes start
+            March 13, 2023.
+          </p>
+          <a href="#">ENROLL TODAY!</a>
+        </div>
+        <img class="" src="#" alt="image" />
 
-        <div class="container__level-story">
-            <div class="topic">
-                <p>Your story starts here</p>
-            </div>
-            <div class="story-1 level-story">
-                <a class="undergraduate-story" href="#">
-                    <div class="level-story-content">
-                        <p>UNDERGRADUATE</p>
-                        <p>A four year, private, nonprofit liberal arts education is accessible and affordable to all.</p>
-                    </div>
-                </a>
-                
-                <a class="undergraduate-story" href="#">
-                    <div class="level-story-content">
-                        <p>GRADUATE</p>
-                        <p>Your next chapter starts here. Discover rigorous but flexible master's degree and certificate programs designed for busy working professionals.</p>
-                    </div>
-                </a>
-                
-            </div>
-            <div class="story-2 level-story">
-                <a class="undergraduate-story" href="#">
-                    <div class="level-story-content">
-                        <p>MILITARY/VETERAN</p>
-                        <p>We proudly serve those who serve our country. Explore programs and benefits especially for service members and their families, online and on military installations nationwide.</p>
-                    </div>
-                </a>
-                <a class="undergraduate-story" href="#">
-                    <div class="level-story-content">
-                        <p>INTERNATIONAL</p>
-                        <p>Experience personal and affordable education in the heart of the Midwest, as an online student, or at one of our campus centers across the U.S.</p>
-                    </div>
-                </a>
-                <a class="undergraduate-story" href="#">
-                    <div class="level-story-content">
-                        <p>TRANSFER</p>
-                        <p>No matter where you began your academic journey, Park University welcomes you. Find out how you can maximize the credits you've earned while completing your degree, your way.</p>
-                    </div>
-                </a>
-                <a class="undergraduate-story" href="#">
-                    <div class="level-story-content">
-                        <p>PROFESSIONAL</p>
-                        <p>Career changers and career advancers: We offer a number of convenient options to help you balance school and life, including night, weekend and online classes.</p>
-                    </div>
-                </a>
-            </div>
+        <div class="c-2 redefined-content">
+          <p>President Smeed’s podcast on ‘Militarily Speaking’</p>
+          <p>
+            PListen to Shane Smeed, President, Park University, as he speaks on
+            supporting military families.
+          </p>
+          <a href="#">Listen Now: Militarily Speaking, Episode 11</a>
         </div>
-        <div class="container__explore">
-            <div class="topic">
-                <p>Explore our campuses</p>
-            </div>
-            <div class="explore-explain">
-                <p>With our flagship campus in Parkville, our new residential campus in Gilbert, campus centers across the US, and over 60 online degrees, your goals are just within reach.</p>
-            </div>
-            <div class="explore-image-links">
-                <a href="#" class="explore-link">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </a>
-            </div>
-        </div>
-        <div class="container__youtube"></div>
-        <div class="container__stats"></div>
-        <div class="container__comments"></div>
-        <div class="container__nondiscrimination">
-            <p>Park University does not discriminate on the basis of race, color, religion, national origin, ancestry, sex, sexual orientation, gender identity, gender expression, age, disability, or status as a protected veteran.
+        <img class="" src="#" alt="image" />
 
-                Discrimination on the basis of pregnancy, childbirth, or related medical conditions is also prohibited. Retaliation directed to any person who pursues a discrimination complaint or grievance, participates in a discrimination investigation, or otherwise opposes unlawful discrimination is prohibited.
-                
-                Park University does not discriminate in employment or in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.
-                
-                For more information on Title IX, go to <a href="https://www.park.edu/title-ix/">Park Edu</a>.
-                <img src="#" alt="nondiscrimi" />
-            </p>
+        <div class="c-3 redefined-content">
+          <p>Park University Named ‘Military Friendly Top 10 School’</p>
+          <p>
+            Park University has been named a Military Friendly Top 10 School for
+            2022-23 by Viqtory.
+          </p>
+          <a href="#">Read more</a>
         </div>
+        <img class="" src="#" alt="image" />
+      </div>
+
+      <div class="container__level-story">
+        <div class="topic">
+          <p>Your story starts here</p>
+        </div>
+        <div class="story-1 level-story">
+          <a class="undergraduate-story" href="#">
+            <div class="level-story-content">
+              <p>UNDERGRADUATE</p>
+              <p>
+                A four year, private, nonprofit liberal arts education is
+                accessible and affordable to all.
+              </p>
+            </div>
+          </a>
+
+          <a class="undergraduate-story" href="#">
+            <div class="level-story-content">
+              <p>GRADUATE</p>
+              <p>
+                Your next chapter starts here. Discover rigorous but flexible
+                master's degree and certificate programs designed for busy
+                working professionals.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="story-2 level-story">
+          <a class="undergraduate-story" href="#">
+            <div class="level-story-content">
+              <p>MILITARY/VETERAN</p>
+              <p>
+                We proudly serve those who serve our country. Explore programs
+                and benefits especially for service members and their families,
+                online and on military installations nationwide.
+              </p>
+            </div>
+          </a>
+          <a class="undergraduate-story" href="#">
+            <div class="level-story-content">
+              <p>INTERNATIONAL</p>
+              <p>
+                Experience personal and affordable education in the heart of the
+                Midwest, as an online student, or at one of our campus centers
+                across the U.S.
+              </p>
+            </div>
+          </a>
+          <a class="undergraduate-story" href="#">
+            <div class="level-story-content">
+              <p>TRANSFER</p>
+              <p>
+                No matter where you began your academic journey, Park University
+                welcomes you. Find out how you can maximize the credits you've
+                earned while completing your degree, your way.
+              </p>
+            </div>
+          </a>
+          <a class="undergraduate-story" href="#">
+            <div class="level-story-content">
+              <p>PROFESSIONAL</p>
+              <p>
+                Career changers and career advancers: We offer a number of
+                convenient options to help you balance school and life,
+                including night, weekend and online classes.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="container__explore">
+        <div class="topic">
+          <p>Explore our campuses</p>
+        </div>
+        <div class="explore-explain">
+          <p>
+            With our flagship campus in Parkville, our new residential campus in
+            Gilbert, campus centers across the US, and over 60 online degrees,
+            your goals are just within reach.
+          </p>
+        </div>
+        <div class="explore-image-links">
+          <a href="#" class="explore-link">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </a>
+        </div>
+      </div>
+      <div class="container__youtube"></div>
+      <div class="container__stats"></div>
+      <div class="container__comments"></div>
+      <div class="container__nondiscrimination">
+        <p>
+          Park University does not discriminate on the basis of race, color,
+          religion, national origin, ancestry, sex, sexual orientation, gender
+          identity, gender expression, age, disability, or status as a protected
+          veteran. Discrimination on the basis of pregnancy, childbirth, or
+          related medical conditions is also prohibited. Retaliation directed to
+          any person who pursues a discrimination complaint or grievance,
+          participates in a discrimination investigation, or otherwise opposes
+          unlawful discrimination is prohibited. Park University does not
+          discriminate in employment or in administration of its educational
+          policies, admissions policies, scholarship and loan programs, and
+          athletic and other school-administered programs. For more information
+          on Title IX, go to
+          <a href="https://www.park.edu/title-ix/">Park Edu</a>.
+          <img src="#" alt="nondiscrimi" />
+        </p>
+      </div>
     </div>
 
     <footer class="footer"></footer>
-</body>
+  </body>
 </html>
