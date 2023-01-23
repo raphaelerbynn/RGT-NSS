@@ -8,7 +8,11 @@
     --font-family-button: 'bebas neue';
   }
 
+  *{
+    box-sizing: border-box;
+  }
   /* -------tags--------- */
+
 body {
   margin: 0;
 }
@@ -140,6 +144,7 @@ padding: 0 20px;
 
 
 /* ------------- mid header ------------------- */
+
 .mid-header{
     background: #9d2235;
     display: flex;
@@ -287,7 +292,7 @@ padding: 0 20px;
   flex-direction: column;
 }
 
-.container__redefined > div{
+.container__redefined div{
   display: flex;
   justify-content: center;
 }
@@ -413,8 +418,91 @@ padding: 0 20px;
 }
 
 
+/* --------------explore----------------- */
+.container__explore{
+  background: var(--dim-white);
+  padding-bottom: 100px;
+}
+
+.container__explore .topic-summary{
+  /* background: #9d2235; */
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+.container__explore .topic{
+  margin-bottom: 0;
+}
 
 
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  column-gap: 10px;
+  padding-top: 30px;
+}
+
+
+
+.explore-link{
+  width: 20vw;
+  height: 480px;
+  /* background: #9d2235; */
+  /* border: #000000 solid 1px; */
+  position: relative;
+  
+}
+
+.explore-link-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba( 0, 0, 0, 0.2);
+}
+
+/* .explore-link div p{
+  position: absolute;
+  bottom: 0;
+} */
+
+.explore-link-wrapper > div{
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  font-size: var(--font-size-medium);
+  color: #fff;
+}
+
+.explore-link-content{
+  height: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  
+}
+
+.explore-link-content p::first-line{
+  text-decoration: overline #ecd505;
+  text-underline-offset: 15px;
+}
+
+.explore-link-title{
+  font-family: var(--font-family-button);
+  text-decoration: none;
+}
+
+
+/* ---------youtube------------------- */
+.container__youtube{
+  /* height: 70vh; */
+}
+
+.container__youtube div{
+  display: flex;
+  justify-content: center;
+}
 
 
 
@@ -488,3 +576,28 @@ padding: 0 20px;
 .container__level-story > div > a:hover .level-story-content{
   background: rgba( 0, 0, 0, 0.4);
 }
+
+.container__level-story > div > a:hover .story-topic{
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: rgb(230, 188, 2);
+}
+
+.explore-link:hover .explore-link-wrapper{
+  background: rgba( 0, 0, 0, 0.6);
+  transition: all 0.5s;
+}
+
+.explore-link:hover {
+  transition: all 0.5s;
+}
+
+.explore-link:hover .explore-link-content{
+  height: auto;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+
+
