@@ -605,6 +605,41 @@ padding: 0 20px;
   color: #ffbb00;
 }
 
+/* ------------nondiscrimination---------- */
+.container__nondiscrimination .topic{
+  font-size: var(--font-size-x-large);
+  text-decoration: none;
+  margin: 0;
+}
+
+.container__nondiscrimination div{
+  /* background: #9d2235; */
+  width: 50%;
+  margin: 100px auto;
+}
+
+.container__nondiscrimination .content{
+  margin: 0;
+  width: 100%;
+  font-size: x-large;
+}
+
+.container__nondiscrimination .content{
+  overflow-wrap: break-word;
+}
+
+.container__nondiscrimination .content img{
+  float: right;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
 
 /* --------------footer------------- */
 .footer{
