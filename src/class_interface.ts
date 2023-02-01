@@ -14,6 +14,7 @@ function logMethod(target: Object, propertyKey: string, descriptor: PropertyDesc
 
 //interface
 interface Person{
+    
     f_name: string;
     l_name: string; 
     age: number;
