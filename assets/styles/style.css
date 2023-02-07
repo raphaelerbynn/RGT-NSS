@@ -290,12 +290,13 @@ padding: 0 20px;
 .container__redefined{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.container__redefined div{
+/* .container__redefined div{
   display: flex;
   justify-content: center;
-}
+} */
 
 .topic{
   font-family: var(--font-family-button);
