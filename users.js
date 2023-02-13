@@ -1,4 +1,6 @@
 //users.js
+
+
 module.exports.users = [
  {
   name: 'Mark',
@@ -31,4 +33,12 @@ module.exports.users = [
   married : true,
   children : ['Mary']
  },
+  
+ {
+  name: 'Endurance',
+  age : 45,
+  occupation: 'Business man',
+  married : true,
+  children : ['Mary']
+ }
 ]
