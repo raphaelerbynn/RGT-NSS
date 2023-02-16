@@ -43,7 +43,7 @@ router.get("/te(ch)?", (req, res) => {
 //------route handlers----------
 //with multiple call backs
 router.get("/english", (req, res, next) => {
-    console.log("sent from 1st call back function");
+    res.download("sent from 1st call back function");
     next()
 }, (req, res) => {
     res.send("Send from 2nd call back");
