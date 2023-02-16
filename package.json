@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-endpoint": "nodemon endpoints.js"
+    "dev-endpoint": "nodemon endpoints.js",
+    "dev-rout": "nodemon routing.js"
   },
   "author": "",
   "license": "ISC"
