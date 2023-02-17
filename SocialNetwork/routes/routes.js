@@ -32,7 +32,9 @@ router.get("/", (req, res) => {
 
 //get single posts
 router.get("/:post_id", (req, res) => {
-    const post = getPostByID(req.params.post_id, res)
+    const post = getPostByID(req.params.post_id, res);
+    // console.log(parseInt(req.params.post_id));
+    // console.log(req.params.post_id);
     res.json(post);
 });
 
@@ -86,7 +88,7 @@ router.post("/:post_id/comment/add", (req, res) => {
     let data = getPostByID(req.params.post_id, res);
 
     if(postData.includes(data)){
-        if(postData.includes(data)){
+        
             
             const newComment = {
                 id: data.comments.length + 1,
@@ -96,7 +98,7 @@ router.post("/:post_id/comment/add", (req, res) => {
             data.comments.push(newComment);
             data = postData;
             
-        }
+        
     }
     res.json(data)
 });
@@ -137,6 +139,71 @@ router.delete("/:post_id/comment/:comment_id", (req, res) => {
     }
     res.send(data);
 });
+
+//------------put request-----------
+//update with put on post
+router.put("/:post_id", (req, res) => {
+    let data = getPostByID(req.params.post_id, res);
+    if(postData.includes(data)){
+        data.id = data.id;
+        data.content = req.body.content;
+        data.timePosted = data.id;
+        data.comments = data.comments;
+    }
+    res.json(postData);
+});
+
+//update with put on comment
+router.put("/:post_id/comment/:comment_id", (req, res) => {
+    let data = getPostByID(req.params.post_id, res);
+    if(postData.includes(data)){
+        let comment = data.comments.find((comment) => comment.id === parseInt(req.params.comment_id));
+        if(comment){
+            comment.comment = req.body.comment;
+        }
+        else{
+            res.status(404);
+            data = {
+                msg: `Comment with id = ${req.params.comment_id} not found on post with id = ${req.params.post_id}`,
+                statusCode: 404
+            }
+        }
+    }
+    res.json(postData);
+});
+
+//---------patch request------------
+//update with patch on post
+router.patch("/:post_id", (req, res) => {
+    let data = getPostByID(req.params.post_id, res);
+    if(postData.includes(data)){
+        if(req.body.id) data.id = req.body.id;
+        if(req.body.content) data.content = req.body.content;
+    }
+    res.json(postData);
+});
+
+//update with patch on comment
+router.put("/:post_id/comment/:comment_id", (req, res) => {
+    let data = getPostByID(req.params.post_id, res);
+    if(postData.includes(data)){
+        let comment = data.comments.find((comment) => comment.id === parseInt(req.params.comment_id));
+        if(comment){
+            if (req.body.id) comment.id = req.body.id;
+            if (req.body.comment) comment.comment = req.body.comment;
+        }
+        else{
+            res.status(404);
+            data = {
+                msg: `Comment with id = ${req.params.comment_id} not found on post with id = ${req.params.post_id}`,
+                statusCode: 404
+            }
+        }
+    }
+    res.json(postData);
+});
+
+
 
 
 
