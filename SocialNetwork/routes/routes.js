@@ -74,7 +74,7 @@ router.post("/add", (req, res) => {
         id: lastID + 1,
         content: req.body.content,
         timePosted: new Date(Date.now()).toString(),
-        comment: []
+        comments: []
     };
 
     postData.push(newPost);
