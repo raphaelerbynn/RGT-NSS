@@ -1,4 +1,6 @@
 const express = require("express"),
+    cors = require("cors"),
+    helmet = require("helmet"),
     app = express();
 
 const port = 3000;
@@ -30,6 +32,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logRequest);
 app.use(logRequestBody);
 
+//add cors middleware to allow restricted resources
+//to all requests
+app.use(cors());
+
+//add default security headers to all http request
+app.use(helmet());
+
 //  app.get('/', function (req, res) {
 //     throw new Error('Something broke!');
 // });
@@ -43,6 +52,10 @@ app.get('/', function (req, res) {
         next(error);
     }
 });
+//adding cors to single route
+app.get("/post", cors(), (req, res) => {
+    res.send("Cors is added to this");
+})
 
 app.use(serverErrorHandling);
 
