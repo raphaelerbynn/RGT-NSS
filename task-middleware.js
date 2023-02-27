@@ -76,8 +76,8 @@ app.use(limitRequest);
 //inbuilt middleware to serve static files
 app.use(express.static("public"));
 
-//middleware to handle file upload for / path
-app.post("/", upload.single("newFile"));
+//middleware to handle file upload
+app.use(upload.single("newFile"));
 
 app.route("/")
   .get((req, res) => {
