@@ -1,8 +1,10 @@
 const express = require("express"),
   compression = require("compression"),
   ipLimit = require("express-rate-limit"),
+  fs = require("fs"),
   Ajv = require("ajv"),
   multer = require("multer"),
+  path = require("path"),
   app = express();
 
 const port = 3000;
@@ -21,16 +23,31 @@ const limitRequest = ipLimit({
 });
 
 //file upload
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-});
 
-const upload = multer({ storage: storage });
+
+const upload = multer();
+
+const saveFileMiddleware = (req, res, next) => {
+  console.log(req.file);
+  if(!req.file){
+    const err = new Error("No file")
+    next(err);
+    return
+  }
+  
+  const file = req.file;
+  const filePath = path.join(__dirname, 'uploads', file.originalname);
+  fs.writeFile(filePath, file.buffer, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+    console.log("done")
+  });
+  next();
+  
+}
+
 
 const ajv = new Ajv();
 const validate = ajv.compile(schema);
@@ -77,29 +94,23 @@ app.use(limitRequest);
 app.use(express.static("public"));
 
 //middleware to handle file upload
-app.use(upload.single("newFile"));
+// app.use(upload.single("file"));
+app.use(upload.single("file"));
+app.use(saveFileMiddleware);
 
-app.route("/")
+app
+  .route("/")
   .get((req, res) => {
     res.sendFile(__dirname + "/public/index.html");
-  })
+  });
   //file upload
-  .post((req, res) => {
+app.post("/upload",(req, res) => {
+    console.log(req.files);
     if (!req.file) {
       res.status(400).send("No file uploaded.");
       return;
     }
     res.send(`File ${req.file.originalname} uploaded successfully!`);
-  });
-
-app
-  .route("/:id")
-  .get((req, res) => {
-    console.log(req.params);
-    res.send("Route with id " + req.params.id);
-  })
-  .post(upload.single("newFile"), (req, res) => {
-    res.send("Post in route with post id " + req.params.id);
   });
 
 //error handling middleware
