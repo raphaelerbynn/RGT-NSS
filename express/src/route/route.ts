@@ -2,10 +2,12 @@
 import { Request, Response, Router } from "express";
 import { posts } from "../data/posts";
 import { comment, post } from "../interfaces/interface";
+import { validateComment, validatePost } from "../middlewareFunc";
+
 const router: Router = Router();
 
 const postData = posts;
-  
+
 
 //--------get requests-----------
 //get all posts
@@ -69,7 +71,7 @@ router.get("/:post_id/comment/:comment_id", (req: Request, res: Response) => {
 
 //--------post requests-------------
 //post to posts
-router.post("/", (req: Request, res: Response) => {
+router.post("/", validatePost, (req: Request, res: Response) => {
     // const lastPostID: number = postData.length > 0 ? postData.at(postData.length -1).id : -1;
     const newPost: post = {
         id: postData.length,
@@ -85,7 +87,7 @@ router.post("/", (req: Request, res: Response) => {
 });
 
 //post comment
-router.post("/:post_id/comment", (req: Request, res: Response) => {
+router.post("/:post_id/comment", validateComment, (req: Request, res: Response) => {
     const id = req.params.post_id;
     const post = postData.find((post) => post.id === parseInt(id));
     if(!post){
@@ -222,7 +224,7 @@ router.put("/:post_id/comment/:comment_id", (req: Request, res: Response) => {
     const id = req.params.post_id;
     let post = postData.find((post) => post.id === parseInt(id));
     if(!post){
-        const notFound: object = {
+        const notFound: {} = {
             msg: `Post with id = ${id} not found`,
             statusCode: 404
         };
@@ -243,11 +245,5 @@ router.put("/:post_id/comment/:comment_id", (req: Request, res: Response) => {
 
     res.json(postData);
 });
-
-
-
-
-
-
 
 export default router;
